@@ -15,7 +15,7 @@ const Edit = () => {
 
   // Fetch book data
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/books/${id}`)
+    axios.get(`https://book-review-platform-sable.vercel.app/api/books/${id}`)
       .then(res => setForm(res.data))
       .catch(err => console.error('Failed to fetch book', err));
   }, [id]);
@@ -27,7 +27,7 @@ const Edit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/books/${id}`, form);
+      await axios.put(`https://book-review-platform-sable.vercel.app/api/books/${id}`, form);
       alert('Book updated successfully');
       navigate('/');
     } catch (err) {
