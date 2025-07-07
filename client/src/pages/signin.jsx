@@ -20,7 +20,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', form);
+      const res = await axios.post('https://book-review-platform-sable.vercel.app/api/users/login', form);
       
       localStorage.setItem('user', JSON.stringify(res.data.result));
       
