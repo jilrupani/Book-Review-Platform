@@ -1,0 +1,126 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  margin: 0;
+  padding: 0;
+  color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #3e6183;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #f9ca24;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.book-form input,
+.book-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ecf0f1;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.book-form input:focus,
+.book-form textarea:focus {
+  box-shadow: 0 0 10px rgba(249, 202, 36, 0.6);
+}
+
+.book-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(145deg, #f9ca24, #e84118);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(233, 69, 16, 0.4);
+  transition: all 0.4s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(145deg, #e84118, #f9ca24);
+  transform: scale(1.08);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.25),
+    0 10px 20px rgba(249, 202, 36, 0.5);
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.input-field option {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+}
+
+
+.submit-btn.update {
+  background-color: #4CAF50;
+}
+
+.submit-btn.update:hover {
+  background-color: #45a049;
+}
+
+select {
+  background-color: #ecf0f1;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Dark mode support */
+body.dark-mode select {
+  background-color: #444;
+  color: #f0f0f0;
+}
+

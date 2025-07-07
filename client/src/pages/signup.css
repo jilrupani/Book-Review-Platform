@@ -1,0 +1,91 @@
+.signup-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-form input {
+  display: block;
+  /* width: 100%; */
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.signup-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #218838;
+}
+
+
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.signup-form input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .signup-container {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .signup-form input {
+  background-color: #444;
+  color: black; /* 👈 password and text visible in black */
+  border: 1px solid #666;
+}
+
+body.dark-mode .signup-form input:focus {
+  box-shadow: 0 0 10px rgba(249, 202, 36, 0.6);
+}
+
+body.dark-mode .signup-form button {
+  background: linear-gradient(145deg, #f9ca24, #e84118);
+  color: white;
+  box-shadow:
+    0 4px 8px rgba(255, 255, 255, 0.1),
+    0 8px 16px rgba(233, 69, 16, 0.3);
+}
+
+body.dark-mode .signup-form button:hover {
+  background: linear-gradient(145deg, #e84118, #f9ca24);
+  transform: scale(1.03);
+}
+
+body.dark-mode .register-link {
+  color: #ccc;
+}
+
+body.dark-mode .register-link a {
+  color: #f9ca24;
+}
+
+body.dark-mode .register-link a:hover {
+  color: #e84118;
+}
