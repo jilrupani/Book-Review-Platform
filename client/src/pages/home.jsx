@@ -274,7 +274,7 @@ const Home = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/books');
+      const res = await axios.get('https://book-review-platform-sable.vercel.app/api/books');
       setBooks(res.data);
     } catch {
       console.error('Error fetching books');
@@ -341,7 +341,7 @@ const Home = () => {
     if (!commentInput[bookId] || !user?.name) return;
 
     try {
-      await axios.post(`http://localhost:5000/api/books/${bookId}/comments`, {
+      await axios.post(`https://book-review-platform-sable.vercel.app/api/books/${bookId}/comments`, {
         text: commentInput[bookId],
         author: user.name,
       });
@@ -355,7 +355,7 @@ const Home = () => {
 
   const handleCommentDelete = async (bookId, commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/books/${bookId}/comments/${commentId}`);
+      await axios.delete(`https://book-review-platform-sable.vercel.app/api/books/${bookId}/comments/${commentId}`);
       toast.success('Comment deleted');
       fetchBooks();
     } catch (err) {
@@ -369,7 +369,7 @@ const Home = () => {
 
   const handleDelete = async (bookId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/books/${bookId}`);
+      await axios.delete(`https://book-review-platform-sable.vercel.app/api/books/${bookId}`);
       toast.success('Book deleted');
       fetchBooks();
     } catch (err) {
