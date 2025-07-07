@@ -32,7 +32,7 @@ const SignUp = () => {
   }
 
   try {
-    const res = await axios.post('http://localhost:5000/api/users/signup', form);
+    const res = await axios.post('https://book-review-platform-sable.vercel.app/api/users/signup', form);
     // alert('Account created successfully! Please sign in.');
     console.log(res);
     
