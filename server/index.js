@@ -1,31 +1,29 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import bodyParset from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
 import userRoutes from './routes/users.js';
-import bookRoutes from './routes/books.js';
-
-dotenv.config();
-
+import books from './routes/books.js'
 const app = express();
-
+dotenv.config();
 app.use(cors());
-app.use(bodyParser.json({ limit: '30mb', extended: true }));
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
-app.use('/api/books', bookRoutes);
-app.use('/api/users', userRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello to Memories API.');
-});
+app.use(bodyParset.json({ limit:"30mb",extended: true}));
+app.use(bodyParset.urlencoded({ limit:"30mb",extended: true}));
+app.use(express.json());
 
-// No app.listen here
-mongoose.connect(process.env.CONNECTION_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+app.use('/api/user',userRoutes);
+app.use('/api/auth',books);
+// const  CONNECTION_URL = "mongodb+srv://jilrupani04:jilrupani04@cluster0.7a7wjpb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const PORT = process.env.PORT || 5000;
+app.get('/',(req,res)=>{
+    res.send('Hello to Memories API.');
+})
+mongoose.connect(process.env.CONNECTION_URL,{useNewURLParser : true, useUnifiedTopology: true})
+    .then(() => { app.listen(PORT, () => console.log(`server running on port : ${PORT}`))   })
+    .catch((err)=>{ console.log(err);
+})
 
-export default app;
+// mongoose.set('useFindAndModify', false);
